@@ -1,5 +1,6 @@
 package com.example.cukraszda;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,12 +11,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 public class UserController {
     @Autowired private userRepo userRepo;
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
-    @GetMapping("/registration")
-    public String Registration(Model model) {
-        model.addAttribute("user", new users());
-        return "registration";
-    }
 
     @PostMapping("/registration")
     public String saveUser(@ModelAttribute users user, RedirectAttributes redirectAttributes) {
@@ -26,20 +24,19 @@ public class UserController {
             }
         }
 
-        user.setPassword(PasswordHash.hashPassword(user.getPassword()));
+        String encodedPassword = passwordEncoder.encode(user.getPassword());
+        user.setPassword(encodedPassword);
+        user.setUsername(user.getUsername());
+        user.setRole("ROLE_USER");
         userRepo.save(user);
         return "index";
     }
 
-    @GetMapping("/login")
-    public String Login() {
-        return "login";
-    }
 
     @PostMapping("/login")
     public String login(@ModelAttribute users user, RedirectAttributes redirectAttributes) {
         for(users user2: userRepo.findAll()) {
-            if(user2.getUsername().equals(user.getUsername()) && user2.getPassword().equals(PasswordHash.hashPassword(user.getPassword()))) {
+            if(user2.getUsername().equals(user.getUsername()) && passwordEncoder.matches(user.getPassword(), user2.getPassword())) {
                 return "main";
             }
         }

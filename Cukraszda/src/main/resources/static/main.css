@@ -53,7 +53,7 @@ nav ul li:last-child {
     margin-left: auto;
 }
 
-nav ul li a.logout {
+nav ul li button {
     color: white;
     text-decoration: none;
 }
