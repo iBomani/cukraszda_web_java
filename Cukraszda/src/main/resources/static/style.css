@@ -11,12 +11,14 @@ body {
 }
 
 header {
+    justify-content: center;
     text-align: left;
     background-color: #1D1E18;
-    padding: 20px;
+    padding: 10px;
 }
 
 header h1 {
+    font-family: 'Montserrat', sans-serif; /* Montserrat font */
     font-size: 36px;
     color: #fff;
 }
@@ -34,19 +36,21 @@ main {
 }
 
 .content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    justify-content: space-between;
+    display: grid; /* Grid layout for the content section */
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    grid-template-rows: auto auto; /* Two rows */
     background-color: #AAD2BA;
     padding: 20px;
     border-radius: 10px;
+    width: 63%;
+
 }
 
 .image-grid {
-    grid-column: 1 / 2;
-    gap: 10px;
-    width: 40%;
+    display: grid; /* Nested grid for images */
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for images */
+    grid-gap: 10px;
+    grid-column: 1 / 2; /* Position in first column */
 }
 
 .img-box {
@@ -58,20 +62,33 @@ main {
     font-size: 20px;
     border: 2px solid #8db68b;
 }
-img{
-    width: 10vw;
-    height: 10vw;
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* Ensure images fit properly */
 }
+
 .text-content {
-    grid-column: 2 / 3;
-    width: 55%;
-    font-size: 14px;
-    color: #333;
+    grid-column: 2 / 3; /* Position in the second column */
+    font-size: 17px;
+    color: black;
     text-align: left;
     line-height: 1.6;
+    padding-left: 20px; /* Add padding for spacing */
+    font-family: 'Playfair Display', serif;
+}
+
+.button-content {
+    grid-column: 1 / 3; /* Span both columns */
+    display: flex;
+    flex-direction: column; /* Arrange buttons vertically */
+    align-items: center; /* Center align buttons */
+    margin-top: 20px; /* Add some space above the buttons */
 }
 
 button {
+    font-family: 'Playfair Display', serif;
     padding: 15px 30px;
     font-size: 18px;
     border: none;
@@ -79,10 +96,7 @@ button {
     cursor: pointer;
     background-color: #6B8F71;
     color: #D9FFF5;
-}
-.button-content{
-    grid-column: 1 / 3;
-    justify-content: center;
+    margin: 10px 0; /* Add margin between buttons */
 }
 
 footer {
@@ -93,4 +107,17 @@ footer {
     color: #8db68b;
     text-decoration: none;
     font-size: 18px;
+}
+.seftcukraszda{
+    font-size: 18px; /* Nagyobb méret */
+    color: #06402B; /* Arany szín */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Árnyék */
+}
+#seftmotto{
+    font-size: 20px; /* Kisebb méret */
+    color: #FDDC5C; /* Fehér szín */
+    padding: 5px 10px; /* Belső térköz */
+    border-radius: 5px; /* Lekerekített sarkok */
+    display: inline-block; /* Csak a szöveg körüli háttér */
+
 }
