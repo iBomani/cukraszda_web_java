@@ -3,13 +3,42 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Cukrászda</title>
+    <link rel="stylesheet" href="../static/style.css" th:href="@{style.css}">
 </head>
 <body>
-  <h1>SEFT CUKRÁSZDA</h1>
-  <ul>
-    <li>Torta</li>
-    <li>Finomság</li>
-    <li>Süti</li>
-  </ul>
+<header>
+    <h1>Seft Cukrászda</h1>
+    <p class="motto">„Süti nélkül nincs seft”</p>
+</header>
+
+<main>
+    <section class="content">
+        <div class="image-grid">
+            <div class="img-box"><img src="/image/inside.png" alt="inside"></div>
+            <div class="img-box">img1</div>
+            <div class="img-box">img1</div>
+            <div class="img-box">img1</div>
+        </div>
+
+        <div class="text-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non libero vel magna posuere eleifend. In hac habitasse platea dictumst. Nullam ullamcorper ut risus at dignissim...</p>
+            <p>Interdum et malesuada fames ac ante ipsum primis in faucibus...</p>
+            <p>Fusce lacinia odio nunc, bibendum varius tortor commodo ac...</p>
+            <p>Aenean sit amet eros et purus maximus dapibus...</p>
+            <!-- További Lorem ipsum szöveg -->
+        </div>
+        <div class="button-content">
+        <button id="login-btn">BEJELENTKEZEK</button>
+        <button id="register-btn">REGISZTRÁLOK</button>
+        </div>
+    </section>
+
+
+
+
+    <footer>
+        <a href="#" class="contact-link">Kapcsolat</a>
+    </footer>
+</main>
 </body>
 </html>
