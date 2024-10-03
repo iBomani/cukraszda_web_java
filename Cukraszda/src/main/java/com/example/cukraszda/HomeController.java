@@ -16,6 +16,11 @@ public class HomeController {
         return "login";
     }
 
+    @GetMapping("/contact")
+    public String contact() {
+        return "contact";
+    }
+
     @GetMapping("/registration")
     public String registration(Model model) {
         model.addAttribute("user", new users());

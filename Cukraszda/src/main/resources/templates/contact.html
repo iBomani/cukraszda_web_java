@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Cukrászda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css" th:href="@{style.css}">
+    <link rel="stylesheet" href="../static/login.css" th:href="@{login.css}">
+</head>
+<body>
+<header>
+    <h1>Seft Cukrászda</h1>
+    <p class="motto">„Süti nélkül nincs seft”</p>
+</header>
+<main>
+    <div class="contact-container content" >
+        <form action ="/contact" method="post" class="contact-form" >
+            <label for="title"></label>
+            <br>
+            <input type="text" id="title" name="title" placeholder="Title" required>
+            <br>
+            <label for="content"></label>
+            <br>
+            <input type="text" id="content" name="content" placeholder="..." required>
+            <br>
+            <button type="submit">KÜLDÉS</button>
+        </form>
+    </div>
+</main>
+</body>
+</html>

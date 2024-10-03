@@ -3,8 +3,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.GrantedAuthority;
+
+import java.util.Collection;
+import java.util.Collections;
+
 @Entity
-public class users {
+public class users implements UserDetails {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
@@ -15,6 +21,10 @@ public class users {
     private String email;
     private String role;
 
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return Collections.singleton(() -> role);
+    }
     public String getRole() {
         return role;
     }

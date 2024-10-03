@@ -20,7 +20,13 @@ public class CustomUserDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException("User not found");
         }
 
+
+        return user;
+        /*
         Collection<GrantedAuthority> authorities = AuthorityUtils.commaSeparatedStringToAuthorityList(user.getRole());
         return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), authorities);
+
+         */
     }
+
 }
