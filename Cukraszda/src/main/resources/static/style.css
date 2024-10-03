@@ -11,6 +11,7 @@ body {
 }
 
 header {
+    height: 1px;
     justify-content: center;
     text-align: left;
     background-color: #1D1E18;
@@ -18,7 +19,7 @@ header {
 }
 
 header h1 {
-    font-family: 'Montserrat', sans-serif; /* Montserrat font */
+    font-family: 'Montserrat', sans-serif;
     font-size: 36px;
     color: #fff;
 }
@@ -36,9 +37,9 @@ main {
 }
 
 .content {
-    display: grid; /* Grid layout for the content section */
-    grid-template-columns: 1fr 1fr; /* Two columns */
-    grid-template-rows: auto auto; /* Two rows */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
     background-color: #AAD2BA;
     padding: 20px;
     border-radius: 10px;
@@ -47,44 +48,44 @@ main {
 }
 
 .image-grid {
-    display: grid; /* Nested grid for images */
-    grid-template-columns: repeat(2, 1fr); /* 2 columns for images */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 10px;
-    grid-column: 1 / 2; /* Position in first column */
+    grid-column: 1 / 2;
 }
 
 .img-box {
-    background-color: #d3d3d3;
+    background-color: #6B8F71;
     color: #666;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 20px;
     border: 2px solid #8db68b;
+    border-radius: 10px;
 }
 
 img {
     max-width: 100%;
     max-height: 100%;
-    object-fit: cover; /* Ensure images fit properly */
+    object-fit: cover;
 }
 
 .text-content {
-    grid-column: 2 / 3; /* Position in the second column */
+    grid-column: 2 / 3;
     font-size: 17px;
     color: black;
     text-align: left;
     line-height: 1.6;
-    padding-left: 20px; /* Add padding for spacing */
+    padding-left: 20px;
     font-family: 'Playfair Display', serif;
 }
 
 .button-content {
-    grid-column: 1 / 3; /* Span both columns */
+    grid-column: 1 / 3;
     display: flex;
-    flex-direction: column; /* Arrange buttons vertically */
-    align-items: center; /* Center align buttons */
-    margin-top: 20px; /* Add some space above the buttons */
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
 }
 
 button {
@@ -96,7 +97,7 @@ button {
     cursor: pointer;
     background-color: #6B8F71;
     color: #D9FFF5;
-    margin: 10px 0; /* Add margin between buttons */
+    margin: 10px 0;
 }
 
 footer {
@@ -108,16 +109,15 @@ footer {
     text-decoration: none;
     font-size: 18px;
 }
-.seftcukraszda{
-    font-size: 18px; /* Nagyobb méret */
-    color: #06402B; /* Arany szín */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Árnyék */
+.seftcukraszda {
+    font-size: 18px;
+    color: #06402B;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 #seftmotto{
-    font-size: 20px; /* Kisebb méret */
-    color: #FDDC5C; /* Fehér szín */
-    padding: 5px 10px; /* Belső térköz */
-    border-radius: 5px; /* Lekerekített sarkok */
-    display: inline-block; /* Csak a szöveg körüli háttér */
-
+    font-size: 20px;
+    color: #FDDC5C;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
 }
