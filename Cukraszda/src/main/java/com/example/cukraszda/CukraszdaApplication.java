@@ -4,8 +4,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @SpringBootApplication
 @Controller
@@ -16,7 +14,7 @@ public class CukraszdaApplication {
 		SpringApplication.run(CukraszdaApplication.class, args);
 	}
 	@GetMapping("/cukraszda")
-	public String cukraszdaFajl() {
+	public String cukraszdaFile() {
 		return "index";
 	}
 }
