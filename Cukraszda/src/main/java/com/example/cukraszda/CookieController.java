@@ -14,7 +14,7 @@ public class CookieController {
     private CookieService cookieService;
 
     @GetMapping("/menu")
-    public List<cookies> getCookies() {
+    public List<CookieDTO> getCookies() {
         return cookieService.getAllCookies();
     }
 

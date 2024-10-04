@@ -1,14 +1,18 @@
 package com.example.cukraszda;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
 @Entity
 public class nutrients {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
-    private String cookie_id;
+
+
+
+    @ManyToOne
+    @JoinColumn(name="cookie_id", nullable = false)
+    private cookies cookie;
+    //private String cookie_id;
     private String type_free;
 
     public int getId() {
@@ -18,13 +22,12 @@ public class nutrients {
     public void setId(int id) {
         this.id = id;
     }
-
-    public String getCookie_id() {
-        return cookie_id;
+    public cookies getCookie() {
+        return cookie;
     }
 
-    public void setCookie_id(String cookie_id) {
-        this.cookie_id = cookie_id;
+    public void setCookie(cookies cookie) {
+        this.cookie = cookie;
     }
 
     public String getType_free() {

@@ -1,16 +1,30 @@
 package com.example.cukraszda;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
 @Entity
 public class prices {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
-    private int cookie_id;
+
+
+
+    @ManyToOne
+    @JoinColumn(name = "cookie_id", nullable = false)
+    private cookies cookie;
+
+    //private int cookie_id;
     private int price;
     private String unit;
+
+
+    public cookies getCookie() {
+        return cookie;
+    }
+
+    public void setCookie(cookies cookie) {
+        this.cookie = cookie;
+    }
 
     public int getId() {
         return id;
@@ -20,13 +34,6 @@ public class prices {
         this.id = id;
     }
 
-    public int getCookie_id() {
-        return cookie_id;
-    }
-
-    public void setCookie_id(int cookie_id) {
-        this.cookie_id = cookie_id;
-    }
 
     public int getPrice() {
         return price;

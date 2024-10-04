@@ -10,7 +10,7 @@ public class CookieService {
     @Autowired
     private cookieRepo cookieRepo;
 
-    public List<cookies> getAllCookies() {
-        return cookieRepo.findAll();
+    public List<CookieDTO> getAllCookies() {
+        return cookieRepo.findAllCookiesWithDetails();
     }
 }
