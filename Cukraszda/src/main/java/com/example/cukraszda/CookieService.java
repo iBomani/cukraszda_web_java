@@ -8,7 +8,7 @@ import java.util.List;
 @Service
 public class CookieService {
     @Autowired
-    private cookieRepo cookieRepo;
+    private com.example.cukraszda.cookieRepo cookieRepo;
 
     public List<CookieDTO> getAllCookies() {
         return cookieRepo.findAllCookiesWithDetails();
