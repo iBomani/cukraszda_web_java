@@ -10,7 +10,7 @@ public class cookies {
     private int id;
     private String name;
     private String type;
-    private int awarded;
+    private Boolean awarded;
 
     public int getId() {
         return id;
@@ -36,11 +36,11 @@ public class cookies {
         this.type = type;
     }
 
-    public int getAwarded() {
+    public Boolean getAwarded() {
         return awarded;
     }
 
-    public void setAwarded(int awarded) {
+    public void setAwarded(Boolean awarded) {
         this.awarded = awarded;
     }
 }
