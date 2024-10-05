@@ -8,10 +8,14 @@
     <link rel="stylesheet" href="../static/login.css" th:href="@{login.css}">
 </head>
 <body>
+<div class="home-btn">
+    <a th:href="@{/}">Home</a>
+</div>
 <header>
     <h1>Seft Cukrászda</h1>
     <p class="motto">„Süti nélkül nincs seft”</p>
 </header>
+
 <main>
     <div class="login-container content" >
         <form action ="/login" method="post" class="login-form" >

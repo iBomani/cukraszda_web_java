@@ -12,6 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
@@ -43,7 +44,7 @@ public class SecurityConfig {
                 .logout(logout -> logout
                         .logoutRequestMatcher(new AntPathRequestMatcher("/logout")
                         )
-                        .logoutSuccessUrl("/login?logout").permitAll()
+                        .logoutSuccessUrl("/?logout").permitAll()
                 )
                 .exceptionHandling(exception -> exception
                         .accessDeniedHandler(accessDeniedHandler())
@@ -51,10 +52,20 @@ public class SecurityConfig {
         return http.build();
     }
 
+
     @Bean
     public AccessDeniedHandler accessDeniedHandler() {
         return (request, response, accessDeniedException) -> {
-            response.sendRedirect("/main");
+            String requestedUrl = request.getRequestURI();
+
+            if (requestedUrl.equals("/admin")) {
+                response.sendRedirect("/main");
+            }
+
+            if (requestedUrl.equals("/main")) {
+                response.sendRedirect("/");
+            }
+
         };
     }
 

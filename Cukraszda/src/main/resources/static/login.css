@@ -14,6 +14,19 @@ body {
     color: #fff;
 }
 
+.home-btn {
+    position: absolute;
+    left: 10px;
+    top: 30px;
+
+}
+.home-btn a {
+    background-color: #5a755d;
+    border-radius: 15px;
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+}
 .login-container, .contact-container {
     justify-content: center;
     background-color: #AAD2BA;
