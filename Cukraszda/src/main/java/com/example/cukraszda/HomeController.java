@@ -21,6 +21,12 @@ public class HomeController {
         return "contact";
     }
 
+    @GetMapping("/admin")
+    public String admin() {
+         return "admin";
+    }
+
+
     @GetMapping("/registration")
     public String registration(Model model) {
         model.addAttribute("user", new users());

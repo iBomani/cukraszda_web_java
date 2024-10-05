@@ -14,8 +14,9 @@
 
     <nav>
         <ul>
-            <li class="navrow">Étlap</li>
+            <li class="navrow"><a th:href="@{/main}">Étlap</a></li>
             <li class="navrow"><a th:href="@{/contact}">Kapcsolat</a></li>
+            <li class="navrow"><a th:href="@{/admin}">Admin</a></li>
             <li>
                 <form action="/logout" method="post">
                     <button type="submit" class="logout">Kijelentkezés</button>
@@ -35,7 +36,7 @@
                 <button class="filter-button" data-type="tejszínes">Tejszínes sütemény</button> <br>
                 <button class="filter-button" data-type="bejgli">Bejgli</button> <br>
                 <button class="filter-button" data-type="torta">Torta</button> <br>
-                <button class="filter-button" data-type="különlegs">Különleges torta</button> <br>
+                <button class="filter-button" data-type="különleges">Különleges torta</button> <br>
                 <button class="filter-button" data-type="tortaszelet">Tortaszelet</button> <br>
                 <button class="filter-button" data-type="pite">Pite</button> <br>
                 <button class="filter-button" data-type="krémes">Krémes</button> <br>
