@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Cukraszda/Cukraszda.iml" filepath="$PROJECT_DIR$/Cukraszda/Cukraszda.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/cukraszda_web_java.iml" filepath="$PROJECT_DIR$/.idea/cukraszda_web_java.iml" />
     </modules>
   </component>
