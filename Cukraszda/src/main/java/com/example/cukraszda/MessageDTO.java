@@ -1,41 +1,31 @@
 package com.example.cukraszda;
-import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
-@Entity
-public class messages {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-
-
-    @ManyToOne
-    @JoinColumn(name="user_id")
-    private users user;
-
-    //private int user_id;
+public class MessageDTO {
+    private String name;
     private String title;
     private String content;
     private LocalDateTime date;
 
-
-    public users getUser() {
-        return user;
+    public MessageDTO(String name, String title, String content, LocalDateTime date) {
+        this.name = name;
+        this.title = title;
+        this.content = content;
+        this.date = date;
     }
 
-    public void setUser(users user) {
-        this.user = user;
+    public MessageDTO(String title, String content, LocalDateTime date) {
+        this("Vendég", title, content, date);
     }
 
-    public int getId() {
-        return id;
+    public String getName() {
+        return name;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setName(String name) {
+        this.name = name;
     }
-
 
     public String getTitle() {
         return title;

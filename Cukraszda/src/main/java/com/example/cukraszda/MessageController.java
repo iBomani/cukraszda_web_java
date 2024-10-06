@@ -26,13 +26,13 @@ public class MessageController {
 
             users user = (users) customUserDetailsService.loadUserByUsername(username);
             int userId = user.getId();
-            message.setUser_id(userId);
+            message.setUser(user);
             message.setTitle(message.getTitle());
             message.setContent(message.getContent());
             messageRepo.save(message);
             return "main";
         } else {
-            message.setUser_id(0);
+            message.setUser(null);
             message.setTitle(message.getTitle());
             message.setContent(message.getContent());
             messageRepo.save(message);
