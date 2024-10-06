@@ -4,6 +4,7 @@ const menuItems = document.getElementsByClassName('item');
 // console.log(menuItems);
 filterButtons.forEach(button => {
     button.addEventListener('click', () => {
+        activeColor(button)
    //     console.log("Button clicked:", button.dataset.type);
         const filterType = button.dataset.type;
         for (let i = 0; i<menuItems.length; i++) {
@@ -25,3 +26,14 @@ filterButtons.forEach(button => {
     })
 
 })
+
+function activeColor(button) {
+    filterButtons.forEach(b => {
+        if(b === button) {
+            button.classList.add('active');
+
+        } else {
+            b.classList.remove('active');
+        }
+    })
+}

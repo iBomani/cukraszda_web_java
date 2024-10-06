@@ -20,17 +20,23 @@ header {
 .navrow a {
     text-decoration: none;
     background-color: #1D1E18;
-    padding: 5px;
+    padding: 10px;
+    font-size: 20px;
     color: white;
     border-radius: 5px;
     margin-right: 10px;
 }
 
+.active {
+    background-color: #3a5c3e !important;
+}
+
 .logout {
     text-decoration: none;
     background-color: #1D1E18;
-    padding: 5px;
+    padding: 10px;
     color: white;
+    font-size: 20px;
     border-radius: 5px;
     margin-right: 10px;
 }
@@ -113,6 +119,9 @@ nav ul li button {
 }
 .item {
     background-color: #AAD2BA;
+    -webkit-box-shadow: 6px 9px 37px -4px rgba(99,92,99,1);
+    -moz-box-shadow: 6px 9px 37px -4px rgba(99,92,99,1);
+    box-shadow: 6px 9px 37px -4px rgba(99,92,99,1);
     margin: 5px;
     padding: 10px;
     height: 20vh;
