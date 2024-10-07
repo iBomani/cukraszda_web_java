@@ -16,7 +16,7 @@
         <ul>
             <li class="navrow"><a th:href="@{/main}">Étlap</a></li>
             <li class="navrow"><a th:href="@{/contact}">Kapcsolat</a></li>
-            <li class="navrow">Bejelentkezve, mint: <span sec:authentication="name"></span></li>
+            <li class="navrow" id="nameid">Bejelentkezve, mint: <span sec:authentication="name"></span></li>
             <li class="navrow"><a th:if="${#authorization.expression('hasRole(''ADMIN'')')}" th:href="@{/admin}">Admin</a></li>
             <li>
                 <form action="/logout" method="post">
