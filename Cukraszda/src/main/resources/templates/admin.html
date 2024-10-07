@@ -39,7 +39,24 @@
             test message
         </div>
     </div>
+    <script>
+        async function loadMessage() {
+            try {
+                const response = await fetch('/api/message');
 
+                const messageItems = await response.json();
+
+                console.log(messageItems)
+
+            } catch (error) {
+                console.error('Error fetching cookies', error);
+            }
+        }
+
+        window.onload = loadMessage;
+
+
+    </script>
 </main>
 
 
