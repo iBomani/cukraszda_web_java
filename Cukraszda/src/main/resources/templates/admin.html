@@ -5,6 +5,7 @@
     <title>Cukrászda</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../static/main.css" th:href="@{main.css}">
+
 </head>
 <body>
 <header>
@@ -23,6 +24,34 @@
         </li>
     </ul>
 </nav>
+<main>
+    <div class="container">
+        <div class="message-row">
+            <div>
+                <strong>USERNAME</strong> - TITLE
+            </div>
+            <div>
+                DATE
+                <button class="toggle-button" onclick="toggleMessage('message1')">V</button>
+            </div>
+        </div>
+        <div id="message1" class="message-content">
+            test message
+        </div>
+    </div>
 
+</main>
+
+
+<script>
+    function toggleMessage(messageId) {
+        const messageContent = document.getElementById(messageId);
+        if (messageContent.style.display === 'none' || messageContent.style.display === '') {
+            messageContent.style.display = 'block';
+        } else {
+            messageContent.style.display = 'none';
+        }
+    }
+</script>
 </body>
 </html>

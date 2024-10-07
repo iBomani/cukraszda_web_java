@@ -182,7 +182,30 @@ nav ul li button {
 .item-info {
     border-radius: 10px 10px 0 0;
 }
-
-
-
-
+.message-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #6B8F71;
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+.message-content {
+    display: none;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+.toggle-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.container{
+    width: 80%;
+    margin: 20px auto auto;
+}
