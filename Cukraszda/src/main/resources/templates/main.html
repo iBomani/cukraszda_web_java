@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Cukrászda</title>
@@ -16,6 +16,7 @@
         <ul>
             <li class="navrow"><a th:href="@{/main}">Étlap</a></li>
             <li class="navrow"><a th:href="@{/contact}">Kapcsolat</a></li>
+            <li class="navrow">Bejelentkezve, mint: <span sec:authentication="name"></span></li>
             <li class="navrow"><a th:if="${#authorization.expression('hasRole(''ADMIN'')')}" th:href="@{/admin}">Admin</a></li>
             <li>
                 <form action="/logout" method="post">
