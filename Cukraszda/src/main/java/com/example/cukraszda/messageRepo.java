@@ -10,6 +10,7 @@ import java.util.List;
 public interface messageRepo extends JpaRepository<messages, Integer>{
     @Query("SELECT new com.example.cukraszda.MessageDTO(u.username, m.title, m.content, m.date) " +
             "FROM messages m " +
-            "LEFT JOIN users u ON m.user.id = u.id ")
+            "LEFT JOIN users u ON m.user.id = u.id " +
+            "ORDER BY m.date DESC")
     List<MessageDTO> findAllMessagesWithDetails();
 }

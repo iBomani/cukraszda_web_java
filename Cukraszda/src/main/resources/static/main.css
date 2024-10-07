@@ -185,6 +185,7 @@ nav ul li button {
 .message-row {
     display: flex;
     justify-content: space-between;
+    font-size: 20px;
     align-items: center;
     padding: 10px;
     background-color: #6B8F71;
@@ -197,6 +198,8 @@ nav ul li button {
     display: none;
     padding: 10px;
     border-top: 1px solid #ccc;
+    font-size: 16px;
+    text-align: left;
 }
 .toggle-button {
     background-color: #1D1E18;
@@ -211,4 +214,10 @@ nav ul li button {
 .container{
     width: 80%;
     margin: 20px auto auto;
+}
+
+pre {
+    text-align: left;
+    margin: 0;
+    white-space: pre-wrap;
 }

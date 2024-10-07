@@ -55,7 +55,7 @@ body {
     width: 90%;
 }
 
-.login-form input, .contact-form input {
+.login-form input, .contact-form input, .contact-form textarea {
     height: 50px;
     width: 100%;
     padding: 6px;
@@ -68,7 +68,7 @@ body {
     box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.login-form input::placeholder, .contact-form input::placeholder {
+.login-form input::placeholder, .contact-form input::placeholder, .contact-form textarea::placeholder {
     color: #666;
 }
 

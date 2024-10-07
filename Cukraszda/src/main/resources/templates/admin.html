@@ -49,13 +49,13 @@
 
                     let id = generateMessageId(message.name, message.date)
                     let fullId = 'message_' + id;
-
+                    let cleanDate = message.date.replace('T', ' - ');
                     div.innerHTML = `
                         <div>
                             <strong>${output_name}</strong> - ${message.title}
                         </div>
                         <div>
-                            ${message.date}
+                            ${cleanDate}.
                             <button class="toggle-button" onclick="toggleMessage('${fullId}')"><i class="fa-solid fa-arrow-down"></i></button>
                         </div>
                     `
@@ -64,9 +64,7 @@
                     divContent.classList.add('message-content');
                     divContent.id = fullId;
 
-                    divContent.innerHTML = `
-                        ${message.content}
-                    `
+                    divContent.innerHTML = `<pre>${message.content}</pre>`
 
                     messageList.append(div, divContent);
                 })
