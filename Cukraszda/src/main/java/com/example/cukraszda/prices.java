@@ -1,4 +1,5 @@
 package com.example.cukraszda;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -9,8 +10,9 @@ public class prices {
 
 
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "cookie_id", nullable = false)
+    @JsonBackReference
     private cookies cookie;
 
     //private int cookie_id;

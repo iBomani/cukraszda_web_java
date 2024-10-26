@@ -1,8 +1,8 @@
 package com.example.cukraszda;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.*;
+
 @Entity
 public class cookies {
     @Id
@@ -11,6 +11,17 @@ public class cookies {
     private String name;
     private String type;
     private Boolean awarded;
+
+
+
+    @OneToOne(mappedBy = "cookie", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
+    private prices price;
+
+
+    @OneToOne(mappedBy = "cookie", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
+    private nutrients nutrient;
 
     public int getId() {
         return id;
@@ -42,5 +53,21 @@ public class cookies {
 
     public void setAwarded(Boolean awarded) {
         this.awarded = awarded;
+    }
+
+    public prices getPrice() {
+        return price;
+    }
+
+    public void setPrice(prices price) {
+        this.price = price;
+    }
+
+    public nutrients getNutrient() {
+        return nutrient;
+    }
+
+    public void setNutrient(nutrients nutrient) {
+        this.nutrient = nutrient;
     }
 }

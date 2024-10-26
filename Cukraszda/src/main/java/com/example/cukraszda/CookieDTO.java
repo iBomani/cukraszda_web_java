@@ -1,6 +1,16 @@
 package com.example.cukraszda;
 
 public class CookieDTO {
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     private String name;
     private String type;
     private Boolean awarded;
@@ -9,7 +19,8 @@ public class CookieDTO {
     private String type_free;
 
 
-    public CookieDTO(String name, String type, Boolean awarded, int price, String unit, String type_free) {
+    public CookieDTO(int id, String name, String type, Boolean awarded, int price, String unit, String type_free) {
+        this.id = id;
         this.name = name;
         this.type = type;
         this.awarded = awarded;
@@ -65,4 +76,5 @@ public class CookieDTO {
     public void setType_free(String type_free) {
         this.type_free = type_free;
     }
+
 }

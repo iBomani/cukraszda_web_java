@@ -1,4 +1,5 @@
 package com.example.cukraszda;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -9,8 +10,9 @@ public class nutrients {
 
 
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name="cookie_id", nullable = false)
+    @JsonBackReference
     private cookies cookie;
     //private String cookie_id;
     private String type_free;
